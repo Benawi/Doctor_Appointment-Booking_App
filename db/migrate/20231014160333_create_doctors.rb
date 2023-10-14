@@ -3,8 +3,7 @@ class CreateDoctors < ActiveRecord::Migration[7.0]
     create_table :doctors do |t|
       t.string :docname
       t.string :location
-      t.string :fullname
-      t.references :specialization_area, null: false, foreign_key: true
+      t.references :specializations, null: false, foreign_key: true
 
       t.timestamps
     end
