@@ -1,0 +1,14 @@
+.Main-part {
+ display: flex;
+}
+
+.Navigation {
+  width: 20%;
+  border: 2px solid red;
+  background-color: red;
+}
+
+.Main-Section {
+  width: 80%;
+  border: 2px solid brown;
+}

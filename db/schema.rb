@@ -47,13 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_14_163513) do
     t.index ["specializations_id"], name: "index_doctors_on_specializations_id"
   end
 
-  create_table "odcs", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "specializations", force: :cascade do |t|
     t.string "specialization_area"
     t.datetime "created_at", null: false
