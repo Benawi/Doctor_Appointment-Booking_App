@@ -1,14 +1,43 @@
 .Main-part {
  display: flex;
+ margin: 0;
+ padding: 0;
 }
 
 .Navigation {
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10%;
+  position: fixed;
+  height: 100vh;
   border: 2px solid red;
   background-color: red;
 }
 
 .Main-Section {
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-left: 10%;
   border: 2px solid brown;
+}
+
+.Menu-Items {
+  list-style: none;
+}
+
+.Section {
+  border: 1px solid red;
+  margin-top: 1%;
+}
+
+.Doctor-Header {
+  margin-top: 5%;
+}
+
+.Docotor-socials {
+  display: flex;
+  list-style: none;
 }

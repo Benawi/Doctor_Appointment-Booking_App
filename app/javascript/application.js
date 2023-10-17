@@ -12,5 +12,4 @@ ReactDOM.render(
 
   document.getElementById('root'),
 );
-root.render(<App />);
 
