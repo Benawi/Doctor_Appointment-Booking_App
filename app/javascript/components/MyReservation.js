@@ -2,7 +2,10 @@ import React from "react";
 
 const MyReservation = () => {
   return (
-    <h2>My reservation</h2>
+    <div className="Main-Section">
+
+      <h2>My reservation</h2>
+    </div>
   );
 }
 

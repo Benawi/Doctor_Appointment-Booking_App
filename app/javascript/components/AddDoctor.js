@@ -2,7 +2,10 @@ import React from "react";
 
 const AddDoctor = () => {
   return (
-    <h2>Add doctor component</h2>
+    <div className="Main-Section">
+
+      <h2>Add doctor component</h2>
+    </div>
   );
 }
 
