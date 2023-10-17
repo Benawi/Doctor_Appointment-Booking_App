@@ -1,13 +1,15 @@
+// Entry point for the build script in your package.json
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App.js';
 
-function App() {
-  return (
-    <h1> Hello Toyo..... are  again!</h1>
-  );
-}
 
-// Create root and render App
-const rootElement = document.getElementById('root');
-const root = ReactDOM.createRoot(rootElement);
-root.render(<App />);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>,
+
+  document.getElementById('root'),
+);
+
