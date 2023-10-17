@@ -10,59 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_14_163513) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_140803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "appointments", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "doctor_id", null: false
-    t.datetime "appointment_time"
-    t.float "duration"
-    t.boolean "confirmed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
-  end
-
-  create_table "bookings", force: :cascade do |t|
-    t.datetime "appointment_time"
-    t.boolean "booked"
-    t.bigint "doctor_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["doctor_id"], name: "index_bookings_on_doctor_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
   create_table "doctors", force: :cascade do |t|
-    t.string "docname"
-    t.string "location"
-    t.bigint "specializations_id", null: false
+    t.string "name"
+    t.text "bio"
+    t.string "photo"
+    t.bigint "specialization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["docname"], name: "index_doctors_on_docname", unique: true
-    t.index ["specializations_id"], name: "index_doctors_on_specializations_id"
+    t.index ["specialization_id"], name: "index_doctors_on_specialization_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "doctor_id"
+    t.datetime "reservation_time"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_reservations_on_doctor_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "specializations", force: :cascade do |t|
-    t.string "specialization_area"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "username"
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "appointments", "doctors"
-  add_foreign_key "appointments", "users"
-  add_foreign_key "bookings", "doctors"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "doctors", "specializations", column: "specializations_id"
+  add_foreign_key "doctors", "specializations"
+  add_foreign_key "reservations", "doctors"
+  add_foreign_key "reservations", "users"
 end
