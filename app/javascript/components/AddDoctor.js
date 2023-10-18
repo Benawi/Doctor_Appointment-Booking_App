@@ -4,7 +4,7 @@ const AddDoctor = () => {
   return (
     <div className="Main-Section">
 
-      <h2>Add doctor component</h2>
+      <h2>Add doctor component will be added here</h2>
     </div>
   );
 }
