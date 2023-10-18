@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:username]
 
-  #relations
+  # relations
   has_many :reservations, foreign_key: 'user', dependent: :destroy
 
   def configure_sign_up_params
