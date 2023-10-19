@@ -1,4 +1,4 @@
-class Api::V1::ReservationController < ApplicationController
+class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.order('created_at desc')
     if @reservations
