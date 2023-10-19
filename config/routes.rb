@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       post '/user/add', to: 'users#create'
       delete '/user/:id', to: 'users#destroy'
       patch '/user/:id', to: 'users#update'
+      get '/specializations', to: 'specializations#index'
   
       # Doctor Routes 
   
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
       get '/doctors/:id', to: 'doctors#show' do
         get :photo, on::member
       end
-      post '/doctors', to: 'doctors#create'
+      post '/create-doctors', to: 'doctors#create'
       delete '/doctors/:id', to: 'doctors#destroy'
       patch '/doctors/update/:id', to: 'doctors#update'
   
