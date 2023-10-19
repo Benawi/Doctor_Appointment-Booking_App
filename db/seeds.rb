@@ -11,16 +11,23 @@
  puts 'Doctors seeding .....'
  
  Doctor.create(
-    name: 'John Smith',
+    name: 'Dr. John Smith',
     bio: 'John is a general surgeon with over 20 years experience.', 
-    photo: 'https://example.com/john_smith.jpg',
+    photo: 'https://img.freepik.com/free-vector/doctor_1196-269.jpg',
     specialization_id: 1
   )
   
   Doctor.create(
-    name: 'Sarah Lee',
+    name: 'Dr. Sarah Lee',
     bio: 'Sarah is a pediatrician who loves working with children.',
-    photo: 'https://example.com/sarah_lee.jpg', 
+    photo: 'https://img.freepik.com/free-vector/doctor_1196-269.jpg', 
     specialization_id: 2
   )
   puts 'Doctors seeds done  ..'
+  puts 'Users seeding  ..'
+  User.create(
+    email: "benawi@example.com",
+    encrypted_password: "password123", 
+    username: "benawi"
+  )
+  puts 'Users seeds done  ..'
