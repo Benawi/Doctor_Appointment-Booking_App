@@ -12,7 +12,7 @@ const AddDoctor = () => {
     name: "",
     bio: "",
     photo: "",
-    specialization: "", // Initialize specialization as an empty string
+    specialization_id: "", // Initialize specialization as an empty string
   });
 
   useEffect(() => {
@@ -59,8 +59,7 @@ const AddDoctor = () => {
           />
           <select
             className="Author-input"
-            name="specialization"
-            value={doctorData.specialization}
+            name="specialization_id"
             onChange={handleInputChange}
           >
             <option value="">Select Specialization</option>

@@ -20,16 +20,28 @@ export const fetchDoctors = createAsyncThunk('doctors/fetchDotors', async () => 
 });
 
 
-export const createDoctors = createAsyncThunk('docotors/createDoctors', async(newDoctor, thunKAPI) => {
+export const createDoctors = createAsyncThunk('doctors/createDoctors', async (newDoctor, thunkAPI) => {
   try {
-    await axios.post(GET_CREATE_DOCTORS_URL, newDoctor);
-    const response = thunKAPI.dispatch(fetchDoctors());
-    return [...response.data];
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+    };
+
+    await axios.post(GET_CREATE_DOCTORS_URL, newDoctor, {
+      headers,
+    });
+
+    const response = await axios.get(GET_DOCTORS_URL);
+    thunkAPI.dispatch(fetchDoctors());
+
+    return response.data;
   } catch (err) {
     return err.message;
-
   }
 });
+
 
 
 const doctorsSlice = createSlice({
