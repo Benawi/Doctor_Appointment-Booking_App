@@ -46,6 +46,16 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
+.add-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 820px) {
   .doctor-container {
     position: relative;
