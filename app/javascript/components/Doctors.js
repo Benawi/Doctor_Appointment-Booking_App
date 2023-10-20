@@ -8,15 +8,15 @@ import SingleDoctor from './SingleDoctor';
 import 'react-multi-carousel/lib/styles.css';
 
 const Doctors = () => {
+
   const dispatch = useDispatch();
-  const doctors = useSelector(state => state.doctors.doctors);
-  console.log(doctors)
-
+  const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
   useEffect(() => {
-    // Fetch doctors when the component mounts
-    dispatch(fetchDoctors());
-  }, [dispatch]);
-
+    if (!fetched) {
+      dispatch(fetchDoctors());
+    }
+  }, [dispatch, fetched ]);
+  const doctors = useSelector((state) => state.doctors.doctors);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },

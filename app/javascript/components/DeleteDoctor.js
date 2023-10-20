@@ -9,8 +9,14 @@ import '../../assets/stylesheets/delete_doctor.css';
 
 
 const DeleteDoctor = () => {
-  const dispatch = useDispatch();
-  const doctors = useSelector(state => state.doctors.doctors);
+ const dispatch = useDispatch();
+  const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
+  useEffect(() => {
+    if (!fetched) {
+      dispatch(fetchDoctors());
+    }
+  }, [dispatch, fetched ]);
+  const doctors = useSelector((state) => state.doctors.doctors);
   const [successNotice, setSuccessNotice] = useState(false);
 
   const deleteDoctor = (id) => {
@@ -39,15 +45,13 @@ const DeleteDoctor = () => {
            <td>  <button
             type="button"
             onClick={() => deleteDoctor(doctor.id)}
-            className="delete-button"
-          >
+            className="delete-button">
             Delete
           </button></td>
           </tr>
         ))}
       </tbody>
     </table>
-
       {successNotice && (
         <p className="text-center text-sky-500 text-lg mt-4">
           Doctor deleted succesfully!

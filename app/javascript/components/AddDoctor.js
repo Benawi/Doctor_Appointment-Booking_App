@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createDoctors } from "../redux/doctors/doctorsSlice";
 import { fetchSpecializations } from "../redux/specializations/specializationsSlice";
-
+import '../../assets/stylesheets/add_doctor.css';
 const AddDoctor = () => {
   const dispatch = useDispatch();
   const specializations = useSelector((state) => state.specializations.specializations);
@@ -31,34 +31,33 @@ const AddDoctor = () => {
   };
 
   return (
-    <div className="Main-Section">
-      <h2>Add Doctor</h2>
-      <div className="Form-section">
-        <h2 className="Form-title">ADD NEW Doctor</h2>
-        <form className="Form-fields" onSubmit={handleSubmit}>
+    <section className="doctor-section">
+      <div className="doctor-container">
+        <h3 className="doctor-title">Add A Doctor</h3>
+        <form className="doctor-form" onSubmit={handleSubmit}>
           <input
-            className="Tilte-input"
+           className="form-control"
             name="name"
             placeholder="Name"
             onChange={handleInputChange}
             required // Mark the input as required
           />
           <input
-            className="Author-input"
+            className="form-control"
             name="bio"
             placeholder="Bio"
             onChange={handleInputChange}
             required // Mark the input as required
           />
           <input
-            className="Author-input"
+            className="form-control"
             name="photo"
             placeholder="Photo"
             onChange={handleInputChange}
             required // Mark the input as required
           />
           <select
-            className="Author-input"
+            className="form-control"
             name="specialization_id"
             onChange={handleInputChange}
           >
@@ -69,12 +68,12 @@ const AddDoctor = () => {
               </option>
             ))}
           </select>
-          <button type="submit" className="Add-btn">
+          <button type="submit" className="add-button">
             Submit
           </button>
         </form>
       </div>
-    </div>
+      </section>
   );
 };
 

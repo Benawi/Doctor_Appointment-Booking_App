@@ -23,13 +23,11 @@ Rails.application.routes.draw do
   
       # Doctor Routes 
 
-        get '/doctors', to: 'doctors#index' do
+      get '/doctors', to: 'doctors#index' do
+      get :photo, on::member
+      end 
+      get '/doctors/:id', to: 'doctors#show' do
         get :photo, on::member
-       end 
-       get '/doctors/:id', to: 'doctors#show' do
-         get :photo, on::member
-       end
-      get 'doctor_details/:id', to: 'doctors#show'
       end
       post '/create-doctors', to: 'doctors#create'
       delete '/doctors/:id', to: 'doctors#destroy'
@@ -43,7 +41,6 @@ Rails.application.routes.draw do
       patch '/reservation/:id', to: 'reservations#update'
       delete  '/reservation/:id', to: 'reservations#destroy'
   
+    end
   end
 end
-
-
