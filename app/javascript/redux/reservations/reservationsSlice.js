@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const GET_RESERVATIONS_URL = 'http://127.0.0.1:5000/api/v1/reservations'
+const CREATE_RESERVATIONS_URL = 'http://127.0.0.1:5000/api/v1/reservation/add'
 
 
 const initialState = {
@@ -15,6 +16,27 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
     return response.data;
   } catch (err) {
     return err.message
+  }
+});
+
+export const createReservations = createAsyncThunk('reservations/createReservations', async (newReservation, thunkAPI) => {
+  try {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+    };
+
+    await axios.post(CREATE_RESERVATIONS_URL, newReservation, {
+      headers,
+    });
+
+    thunkAPI.dispatch(fetchReservations());
+
+    return {};
+  } catch (err) {
+    return err.message;
   }
 });
 

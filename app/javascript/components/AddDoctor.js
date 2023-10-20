@@ -12,7 +12,7 @@ const AddDoctor = () => {
     name: "",
     bio: "",
     photo: "",
-    specialization_id: "", // Initialize specialization as an empty string
+    specialization_id: "",
   });
 
   useEffect(() => {
