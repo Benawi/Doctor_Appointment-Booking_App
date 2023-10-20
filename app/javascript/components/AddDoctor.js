@@ -52,7 +52,7 @@ const AddDoctor = () => {
           <input
             className="form-control"
             name="photo"
-            placeholder="Photo"
+            placeholder="Photo URL"
             onChange={handleInputChange}
             required // Mark the input as required
           />
