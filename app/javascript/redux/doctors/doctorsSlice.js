@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import thunk from 'redux-thunk';
 
 const GET_DOCTORS_URL = 'http://127.0.0.1:5000/api/v1/doctors'
+const GET_CREATE_DOCTORS_URL = 'http://127.0.0.1:5000/api/v1/create-doctors'
+
 
 const initialState = {
   doctors: [],
@@ -19,16 +20,28 @@ export const fetchDoctors = createAsyncThunk('doctors/fetchDotors', async () => 
 });
 
 
-export const createDoctors = createAsyncThunk('docotors/createDoctors', async(newDoctor, thunKAPI) => {
+export const createDoctors = createAsyncThunk('doctors/createDoctors', async (newDoctor, thunkAPI) => {
   try {
-    await axios.post(GET_DOCTORS_URL, newDoctor);
-    const response = thunKAPI.dispatch(fetchBooks());
-    return [...response.data];
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+    };
+
+    await axios.post(GET_CREATE_DOCTORS_URL, newDoctor, {
+      headers,
+    });
+
+    const response = await axios.get(GET_DOCTORS_URL);
+    thunkAPI.dispatch(fetchDoctors());
+
+    return response.data;
   } catch (err) {
     return err.message;
-
   }
 });
+
 
 
 const doctorsSlice = createSlice({

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       post '/user/add', to: 'users#create'
       delete '/user/:id', to: 'users#destroy'
       patch '/user/:id', to: 'users#update'
+      get '/specializations', to: 'specializations#index'
   
       # Doctor Routes 
 
@@ -29,6 +30,11 @@ Rails.application.routes.draw do
          get :photo, on::member
        end
       get 'doctor_details/:id', to: 'doctors#show'
+      end
+      post '/create-doctors', to: 'doctors#create'
+      delete '/doctors/:id', to: 'doctors#destroy'
+      patch '/doctors/update/:id', to: 'doctors#update'
+  
     # Reservation routes
     
       get '/reservations', to: 'reservations#index'
@@ -36,7 +42,7 @@ Rails.application.routes.draw do
       post '/reservation/add', to: 'reservations#create'
       patch '/reservation/:id', to: 'reservations#update'
       delete  '/reservation/:id', to: 'reservations#destroy'
-    end
+  
   end
 end
 

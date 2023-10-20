@@ -1,4 +1,4 @@
-class Api::V1::ReservationController < ApplicationController
+class Api::V1::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.order('created_at desc')
     if @reservations
@@ -18,11 +18,15 @@ class Api::V1::ReservationController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params.merge(user_id: params[:user_id], doctor_id: params[:doctor_id]))
+    @reservation = Reservation.new(reservation_params.merge(doctor_id: params[:doctor_id]))
+
+    # Assuming you have an authentication system, set the user_id to the current user's ID
+    @reservation.user_id = current_user.id
+
     if @reservation.save
       render json: @reservation, status: :created
     else
-      render json: @reservation.errors.full_messages, status: :bad_request
+      render json: { errors: @reservation.errors.full_messages }, status: :bad_request
     end
   end
 
@@ -47,6 +51,6 @@ class Api::V1::ReservationController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:id, :user_id, :doctor_id, :city, :reservation_time)
+    params.require(:reservation).permit(:doctor_id, :reservation_time)
   end
 end
