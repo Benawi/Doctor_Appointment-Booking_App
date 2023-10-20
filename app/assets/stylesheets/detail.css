@@ -1,0 +1,11 @@
+.details-container {
+  position: relative;
+  left: 50%;
+  margin-top: 60px;
+}
+
+@media only screen and (max-width: 767px) {
+  .details-container {
+    left: 300px;
+  }
+}
