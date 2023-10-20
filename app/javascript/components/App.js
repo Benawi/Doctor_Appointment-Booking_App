@@ -7,18 +7,22 @@ import AddDoctor from './AddDoctor';
 import DeleteDoctor from './DeleteDoctor';
 import ReserveForm from './ReservseForm';
 import MyReservation from './MyReservation';
+import DoctorDetails from './DoctorDetails';
 import LogoutButton from './Logout';
 
 const  App = () => {
   return (
-    <div className="Main-part">
+    <div>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Doctors />} />
-          <Route path="/add-doctor" element={<AddDoctor />} />
-          <Route path="/delete-doctor" element={<DeleteDoctor />} />
-          <Route path="/reserve-form" element={<ReserveForm />} />
+          <Route exact path="/doctors" element={<Doctors />} />
+          <Route exact path="/doctors" element={<Doctors />} />
+          <Route exact path="/doctor_details/:id" element={<DoctorDetails />} />
+          <Route exact path="/add-doctor" element={<AddDoctor />} />
+          <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
+          <Route exact path="/reserve-form" element={<ReserveForm />} />
           <Route exact path="/my-reservation" element={<MyReservation />} />
           <Route exact path="/users/sign_out" element={<LogoutButton />} />
         </Routes>
