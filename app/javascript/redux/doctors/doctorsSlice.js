@@ -46,6 +46,7 @@ const doctorsSlice = createSlice({
           state.doctors.push({
             id: doctorId,
             name: doctorData.name,
+            photo:doctorData.photo,
             bio: doctorData.bio,
             // Add other properties you want to include
           });
@@ -59,4 +60,3 @@ const doctorsSlice = createSlice({
 })
 
 export default doctorsSlice.reducer;
-
