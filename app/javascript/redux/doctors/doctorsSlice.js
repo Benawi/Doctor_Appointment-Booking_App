@@ -59,4 +59,6 @@ const doctorsSlice = createSlice({
   },
 })
 
+
+
 export default doctorsSlice.reducer;
