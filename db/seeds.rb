@@ -31,3 +31,11 @@
     username: "benawi"
   )
   puts 'Users seeds done  ..'
+  puts 'reservation seeding  ..'
+  Reservation.create(
+    user_id: 2,
+    doctor_id: 3,
+    reservation_time: DateTime.new(2023,10,22,11,00),
+    comments: "Need prescription refill", 
+  )
+  puts 'reservation seeds done  ..'
