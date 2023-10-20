@@ -9,7 +9,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def show
-    @doctor = Doctor.where(id: params[:id]).includes(:reservations)
+    @doctor = Doctor.where(id: params[:id])
     if @doctor
       render json: @doctor, status: :ok
     else
@@ -45,6 +45,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:id, :user_id, :name, :bio, :photo, :specialization)
+    params.require(:doctor).permit(:id, :name, :bio, :photo, :specialization)
   end
 end
