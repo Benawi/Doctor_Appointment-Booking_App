@@ -20,6 +20,7 @@ const Doctors = () => {
           <img src={doctor.image} alt={`Dr. ${doctor.name}`} />
           <h3>{doctor.name}</h3>
           <p>{doctor.bio}</p>
+          <p>{doctor.specialization}</p>
         </div>
       ))}
     </div>

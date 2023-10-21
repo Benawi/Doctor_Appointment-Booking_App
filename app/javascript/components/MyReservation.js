@@ -16,8 +16,8 @@ const MyReservation = () => {
       {reservations.map((reservation) => (
         <div key={reservation.id}>
           <h3>{reservation.user}</h3>
-          <p>{reservation.doctor}</p>
-          <p>{reservation.reservation_time}</p>
+          <p>Doctor: {reservation.doctor}</p>
+          <p>Reservation Time: {reservation.reservation_time}</p>
         </div>
       ))}
     </div>

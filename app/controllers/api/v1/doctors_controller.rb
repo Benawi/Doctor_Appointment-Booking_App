@@ -1,8 +1,8 @@
 class Api::V1::DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.includes(:reservations).order('created_at desc')
+    @doctors = Doctor.includes(:reservations, :specialization).order('created_at desc')
     if @doctors
-      render json: @doctors, status: :ok
+      render json: @doctors, methods: [:specialization_name], status: :ok
     else
       render json: @doctors.errors.full_messages, status: :bad_request
     end
