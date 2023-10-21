@@ -42,6 +42,13 @@ export const createDoctors = createAsyncThunk('doctors/createDoctors', async (ne
   }
 });
 
+export const deleteDoctorAction = createAsyncThunk(
+  'doctors/deleteDoctor',
+  async (id) => {
+    const response = axios.delete(`http://localhost:5000/api/v1/doctors/${id}`);
+    return id;
+  }
+);
 
 
 const doctorsSlice = createSlice({
@@ -68,6 +75,10 @@ const doctorsSlice = createSlice({
       .addCase(fetchDoctors.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(deleteDoctorAction.fulfilled, (state, action) => {
+        const doctorId = action.payload;
+        state.doctors = state.doctors.filter(doctor => doctor.id !== doctorId);
       });
   },
 })
