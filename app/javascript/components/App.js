@@ -1,23 +1,24 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import '../../assets/stylesheets/app.css'
-import NavBar from './NabBar';
-import Doctors from './Doctors';
-import AddDoctor from './AddDoctor';
-import DeleteDoctor from './DeleteDoctor';
-import ReserveForm from './ReservseForm';
-import MyReservation from './MyReservation';
-import DoctorDetails from './DoctorDetails';
-import LogoutButton from './Logout';
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import "../../assets/stylesheets/app.css";
+import NavBar from "./NabBar";
+import Doctors from "./Doctors";
+import AddDoctor from "./AddDoctor";
+import DeleteDoctor from "./DeleteDoctor";
+import ReserveForm from "./ReservseForm";
+import MyReservation from "./MyReservation";
+import DoctorDetails from "./DoctorDetails";
+import LogoutButton from "./Logout";
+import Header from "./Header";
 
-const  App = () => {
+const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
+        <Header />
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Doctors />} />
-          <Route exact path="/doctors" element={<Doctors />} />
           <Route exact path="/doctors" element={<Doctors />} />
           <Route exact path="/doctor_details/:id" element={<DoctorDetails />} />
           <Route exact path="/add-doctor" element={<AddDoctor />} />
@@ -26,9 +27,9 @@ const  App = () => {
           <Route exact path="/my-reservation" element={<MyReservation />} />
           <Route exact path="/users/sign_out" element={<LogoutButton />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
-  )
-}
+  );
+};
 
 export default App;
