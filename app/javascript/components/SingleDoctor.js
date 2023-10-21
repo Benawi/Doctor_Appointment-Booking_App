@@ -17,8 +17,9 @@ const SingleDoctor = ({
     <div className="image-div">
       <img src={`${photo}`} alt="Profile of doctor" className="doctors-images"  />
     </div>
+    
     <div className="doctor-data">
-      <h4>{name}</h4>
+      <h4>Dr. {name}</h4>
       <p>.........................</p>
       <p>{bio}</p>
       <div className="social-net">

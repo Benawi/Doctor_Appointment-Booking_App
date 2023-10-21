@@ -1,0 +1,28 @@
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+}
+
+/* Mobile menu */
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+}

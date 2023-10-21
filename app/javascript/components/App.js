@@ -1,6 +1,5 @@
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import "../../assets/stylesheets/app.css";
 import NavBar from "./NabBar";
 import Doctors from "./Doctors";
 import AddDoctor from "./AddDoctor";
