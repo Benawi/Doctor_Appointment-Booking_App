@@ -19,14 +19,13 @@ class Api::V1::DoctorsController < ApplicationController
 
   def create
     @doctor = Doctor.new(doctor_params)
-  
+
     if @doctor.save
       render json: { status: 'SUCCESS', data: @doctor, message: 'Doctor successfully created' }, status: :created
     else
       render json: { status: 'ERROR', errors: @doctor.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  
 
   def destroy
     @doctor = Doctor.find(params[:id])

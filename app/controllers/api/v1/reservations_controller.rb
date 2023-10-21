@@ -7,6 +7,7 @@ class Api::V1::ReservationsController < ApplicationController
       render json: @reservations.errors.full_messages, status: :bad_request
     end
   end
+
   def show
     @reservation = Reservation.where(id: params[:id])
     if @reservation
@@ -28,6 +29,7 @@ class Api::V1::ReservationsController < ApplicationController
       render json: { errors: @reservation.errors.full_messages }, status: :bad_request
     end
   end
+
   private
 
   def reservation_params
