@@ -22,7 +22,7 @@ body {
 
 /* navbar */
 .navbar {
-  width: 16vw;
+  width: 18vw;
   height: 100vh;
   border-right: 0.4px solid rgba(142, 142, 142, 0.2);
   padding: 1rem 1rem 0 1.5rem;
@@ -39,6 +39,10 @@ body {
 .links-container {
   margin-top: 3rem;
   margin-left: 2rem;
+}
+
+.logo-container {
+  margin-top: 3rem;
 }
 
 .navbar ul {
@@ -88,6 +92,22 @@ body {
   position: absolute;
   margin-left: 15vw;
   padding: 20px;
+}
+
+.horizontal-line {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  /* stylelint-disable-next-line csstree/validator */
+  font-size: clamp(2rem, 1vw, 3rem);
+  font-weight: bold;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* end of main section */
