@@ -19,11 +19,16 @@ const AddDoctor = () => {
     // Fetch specializations when the component mounts
     dispatch(fetchSpecializations());
   }, [dispatch]);
-
+  const [successNotice, setSuccessNotice] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createDoctors(doctorData));
+    setSuccessNotice(true);
+    setTimeout(() => {
+      setSuccessNotice(false);
+    }, 2000);
   };
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -72,6 +77,11 @@ const AddDoctor = () => {
             Submit
           </button>
         </form>
+        {successNotice && (
+        <p className="text-center text-sky-500 text-lg mt-4">
+          Doctor Saved succesfully!
+        </p>
+      )}
       </div>
       </section>
   );

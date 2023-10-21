@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { fetchDoctors } from "../redux/doctors/doctorsSlice";
 import {
   deleteDoctorAction,
-  getDoctorsAction,
+
 } from '../redux/doctorsReducer/doctors';
 import '../../assets/stylesheets/delete_doctor.css';
-
-
 const DeleteDoctor = () => {
  const dispatch = useDispatch();
   const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
@@ -28,20 +26,26 @@ const DeleteDoctor = () => {
   };
   
   return (
+    
     <div className="delete-container">
+      {successNotice && (
+        <p className="text-center text-sky-500 text-lg mt-4">
+          Doctor deleted succesfully!
+        </p>
+      )}
       <table>
       <thead>
         <tr>
-          <th>Photo</th>
-          <th>Name</th> 
+          <th>Name</th>
+          <th>Bio</th> 
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         {doctors.map(doctor => (
           <tr key={doctor.id} className="delete-details">
-             <td> <img src={`${doctor.photo}`} alt="doctor" className="delete-image" /></td>
              <td>{doctor.name}</td>
+             <td>{doctor.bio}</td>
            <td>  <button
             type="button"
             onClick={() => deleteDoctor(doctor.id)}
@@ -52,11 +56,7 @@ const DeleteDoctor = () => {
         ))}
       </tbody>
     </table>
-      {successNotice && (
-        <p className="text-center text-sky-500 text-lg mt-4">
-          Doctor deleted succesfully!
-        </p>
-      )}
+      
     </div>
   );
 };
