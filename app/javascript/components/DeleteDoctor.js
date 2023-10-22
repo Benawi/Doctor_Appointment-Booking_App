@@ -18,8 +18,8 @@ const DeleteDoctor = () => {
   const doctors = useSelector((state) => state.doctors.doctors);
   const [successNotice, setSuccessNotice] = useState(false);
 
-  const deleteDoctor = (id) => {
-    dispatch(deleteDoctorAction(id));
+  const deleteDoctor = (uuid) => {
+    dispatch(deleteDoctorAction(uuid));
     setSuccessNotice(true);
     setTimeout(() => {
       setSuccessNotice(false);
@@ -28,11 +28,15 @@ const DeleteDoctor = () => {
 
   return (
     <div className="delete-container">
-      {successNotice && (
-        <p className="text-center text-sky-500 text-lg mt-4">
-          Doctor deleted succesfully!
-        </p>
-      )}
+      <div className="header">
+        <h1 className="header-1">AVAILABLE DOCTORS</h1>
+        {successNotice && (
+          <p className="text-center text-sky-500 text-lg mt-4">
+            Doctor deleted succesfully!
+          </p>
+        )}
+      </div>
+      <div>
       <table>
         <thead>
           <tr>
@@ -43,14 +47,14 @@ const DeleteDoctor = () => {
         </thead>
         <tbody>
           {doctors.map((doctor) => (
-            <tr key={doctor.id} className="delete-details">
+            <tr key={doctor.uuid} className="delete-details">
               <td>{doctor.name}</td>
               <td>{doctor.bio}</td>
               <td>
                 {" "}
                 <button
                   type="button"
-                  onClick={() => deleteDoctor(doctor.id)}
+                  onClick={() => deleteDoctor(doctor.uuid)}
                   className="delete-button"
                 >
                   Delete
@@ -60,6 +64,7 @@ const DeleteDoctor = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };
