@@ -58,8 +58,8 @@ const reservationsSlice = createSlice({
           const reservationData = action.payload[reservationId];
           state.reservations.push({
             id: reservationId,
-            user: reservationData.user_id,
-            doctor: reservationData.doctor_id,
+            user: reservationData.user_name,
+            doctor: reservationData.doctor_name,
             reservation_time: reservationData.reservation_time
           });
         });

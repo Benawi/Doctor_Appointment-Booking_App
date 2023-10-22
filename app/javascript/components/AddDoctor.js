@@ -5,9 +5,13 @@ import { fetchSpecializations } from "../redux/specializations/specializationsSl
 import "../../assets/stylesheets/add_doctor.css";
 const AddDoctor = () => {
   const dispatch = useDispatch();
-  const specializations = useSelector(
-    (state) => state.specializations.specializations
-  );
+  const fetched = useSelector((state) => state.specializations.specializations.length > 0);
+  useEffect(() => {
+    if (!fetched) {
+      dispatch(fetchSpecializations());
+    }
+  }, [dispatch, fetched]);
+  const specializations = useSelector((state) => state.specializations.specializations);
 
   // Define doctorData state using useState
   const [doctorData, setDoctorData] = useState({
@@ -17,10 +21,6 @@ const AddDoctor = () => {
     specialization_id: "",
   });
 
-  useEffect(() => {
-    // Fetch specializations when the component mounts
-    dispatch(fetchSpecializations());
-  }, [dispatch]);
   const [successNotice, setSuccessNotice] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -40,6 +40,11 @@ const AddDoctor = () => {
       <section className="doctor-section">
         <div className="doctor-container">
           <h3 className="doctor-title">Add A Doctor</h3>
+          {successNotice && (
+            <p className="doctor-title text-center text-sky-500 text-lg mt-4">
+              Doctor Saved succesfully!
+            </p>
+          )}
           <form className="doctor-form" onSubmit={handleSubmit}>
             <input
               className="form-control"
@@ -78,11 +83,7 @@ const AddDoctor = () => {
               Submit
             </button>
           </form>
-          {successNotice && (
-            <p className="text-center text-sky-500 text-lg mt-4">
-              Doctor Saved succesfully!
-            </p>
-          )}
+         
         </div>
       </section>
   );

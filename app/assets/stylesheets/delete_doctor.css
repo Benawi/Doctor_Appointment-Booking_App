@@ -1,6 +1,6 @@
 .delete-container {
   width: 70%;
-  left: 150px;
+  left: 200px;
   display: flex;
   justify-content: space-evenly;
   gap: 1px;
@@ -23,12 +23,4 @@
   color: #fff;
   border: none;
   cursor: pointer;
-}
-
-@media only screen and (max-width: 820px) {
-  .delete-container {
-    left: 300px;
-    display: flex;
-    flex-direction: column;
-  }
 }

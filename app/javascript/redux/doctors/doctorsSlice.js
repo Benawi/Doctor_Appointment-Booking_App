@@ -69,6 +69,7 @@ const doctorsSlice = createSlice({
         state.status = "succeeded";
         Object.keys(action.payload).forEach((doctorId) => {
           const doctorData = action.payload[doctorId];
+
           state.doctors.push({
             id: doctorId,
             name: doctorData.name,
