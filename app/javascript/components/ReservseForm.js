@@ -1,9 +1,11 @@
 import React, { useState, useEffect }  from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createReservations } from "../redux/reservations/reservationsSlice";
 import { fetchDoctors } from "../redux/doctors/doctorsSlice";
 
 const ReserveForm = () => {
+  const navigate = useNavigate();
   const [reservationData, setreservationData] = useState({
     doctor_id: "",
     reservation_time: "",
@@ -22,6 +24,9 @@ const ReserveForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReservations(reservationData));
+
+    navigate('/my-reservation')
+    
   };
 
   const handleInputChange = (event) => {
@@ -44,7 +49,7 @@ const ReserveForm = () => {
             <option value="">Select Doctor</option>
             {doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.real_id}>
-                {doctor.name} ({doctor.specialization})({doctor.real_id})
+                {doctor.name} ({doctor.specialization})
               </option>
             ))}
           </select>
