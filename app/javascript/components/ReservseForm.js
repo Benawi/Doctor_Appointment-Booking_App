@@ -39,11 +39,12 @@ const ReserveForm = () => {
             className="Author-input"
             name="doctor_id"
             onChange={handleInputChange}
+            value={reservationData.doctor_id}
           >
             <option value="">Select Doctor</option>
             {doctors.map((doctor) => (
-              <option key={doctor.id} value={doctor.id}>
-                {doctor.name} ({doctor.specialization})
+              <option key={doctor.id} value={doctor.real_id}>
+                {doctor.name} ({doctor.specialization})({doctor.real_id})
               </option>
             ))}
           </select>

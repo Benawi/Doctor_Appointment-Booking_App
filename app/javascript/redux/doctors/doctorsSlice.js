@@ -72,6 +72,7 @@ const doctorsSlice = createSlice({
 
           state.doctors.push({
             id: doctorId,
+            real_id: doctorData.id,
             name: doctorData.name,
             photo: doctorData.photo,
             bio: doctorData.bio,
