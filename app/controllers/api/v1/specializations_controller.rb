@@ -7,5 +7,4 @@ class Api::V1::SpecializationsController < ApplicationController
       render json: @specializations.errors.full_messages, status: :bad_request
     end
   end
-
 end
