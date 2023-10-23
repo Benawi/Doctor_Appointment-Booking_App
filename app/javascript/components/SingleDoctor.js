@@ -20,7 +20,8 @@ const SingleDoctor = ({
     
     <div className="doctor-data">
       <h4>Dr. {name}</h4>
-      <p>.........................</p>
+      <h4> {specialization}</h4>
+      <p>............................</p>
       <p>{bio}</p>
       <div className="social-net">
         {social.map((item) => (

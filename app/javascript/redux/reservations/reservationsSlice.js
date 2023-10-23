@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const GET_RESERVATIONS_URL = 'http://127.0.0.1:5000/api/v1/reservations'
-const CREATE_RESERVATIONS_URL = 'http://127.0.0.1:5000/api/v1/reservation/add'
+const CREATE_RESERVATIONS_URL = 'http://127.0.0.1:5000/api/v1/reserve-form'
 
 
 

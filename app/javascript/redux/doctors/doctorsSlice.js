@@ -76,6 +76,7 @@ const doctorsSlice = createSlice({
             photo: doctorData.photo,
             bio: doctorData.bio,
             uuid: doctorData.uuid,
+            specialization: doctorData.specialization_name,
             // Add other properties you want to include
           });
         });
