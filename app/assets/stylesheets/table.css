@@ -6,6 +6,8 @@
   margin-bottom: 1rem;
   background-color: transparent;
   border-collapse: collapse;
+  margin-left: 40px;
+  align-self: center;
 }
 
 .table th,
@@ -54,11 +56,4 @@
 /* Hoverable rows */
 .table-hover tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.075);
-}
-
-/* Smaller text for tables */
-/* stylelint-disable-next-line no-descending-specificity */
-.table-sm th,
-.table-sm td {
-  padding: 5rem;
 }

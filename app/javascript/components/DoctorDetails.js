@@ -43,7 +43,7 @@ const DoctorDetails = () => {
           to="/reserve-form"
           className="btn btn-secondary mt-4 text-center"
         >
-          Book Appointment
+          Reserve Appointment
         </Link>
       </div>
     </div>

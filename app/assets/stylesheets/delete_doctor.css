@@ -24,3 +24,15 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .delete-container {
+    width: 70%;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1px;
+    margin-top: 50px;
+    position: relative;
+  }
+}
