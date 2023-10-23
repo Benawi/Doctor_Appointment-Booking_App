@@ -24,7 +24,7 @@ const App = () => {
           <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
           <Route exact path="/reserve-form" element={<ReserveForm />} />
           <Route exact path="/my-reservation" element={<MyReservation />} />
-          <Route exact path="/users/sign_out" element={<LogoutButton />} />
+          <Route exact path="/logout" element={<SignOut />} />
         </Routes>
       </HashRouter>
     </div>

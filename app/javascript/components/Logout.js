@@ -1,20 +1,30 @@
 import React from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-const LogoutButton = () => {
-  const handleLogout = async () => {
+const SignOut = () => {
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    // Send a request to the server to log the user out
     try {
-      await axios.delete('/users/sign_out'); // Adjust the API endpoint to your routes
-      // Handle successful sign-out, e.g., clear user data or redirect
-      window.location.replace(window.location.href);
+      await fetch('/logout', {
+        method: 'DELETE',
+        credentials: 'include', // Include cookies for session-based authentication
+      });
+
+      // Redirect to the login page using the navigate function
+      navigate('/login'); // Adjust the path to match your login route
     } catch (error) {
-      // Handle sign-out error, e.g., display an error message
+      console.error('Logout failed:', error);
     }
   };
 
   return (
-    <button onClick={handleLogout}>1Sign Out</button>
+    <div className="Main-Section">
+
+      <button onClick={handleSignOut}>Sign Out</button>
+    </div>
   );
 };
 
-export default LogoutButton;
+export default SignOut;
