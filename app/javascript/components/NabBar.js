@@ -24,7 +24,7 @@ const NavBar = () => {
           <NavLink to='/delete-doctor'>DELETE DOCTOR</NavLink>
         </li>
         <li>
-          <NavLink to='/users/sign_out'>Sign Out</NavLink>
+          <a href="/logout" >Sign Out</a>
         </li>
       </ul>
       <div>
