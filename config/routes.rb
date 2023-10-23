@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     
       get '/reservations', to: 'reservations#index'
       post '/reservations/:id', to: 'reservations#show'
-      post '/reservation/add', to: 'reservations#create'
+      post '/reserve-form', to: 'reservations#create'
       patch '/reservation/:id', to: 'reservations#update'
       delete  '/reservation/:id', to: 'reservations#destroy'
   
