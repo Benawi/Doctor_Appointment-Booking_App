@@ -1,11 +1,16 @@
 .details-container {
   position: relative;
-  left: 50%;
-  margin-top: 60px;
+  left: 400px;
+  max-width: 74%;
+  margin-top: 70px;
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 768px) {
   .details-container {
-    left: 300px;
+    position: relative;
+    left: 0;
+    max-width: 100%;
+    margin-top: 80px;
+    align-content: center;
   }
 }
