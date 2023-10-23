@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   root 'root#index'
- 
-
   namespace :api do 
     namespace :v1 do
       get '/users', to: 'users#index'
@@ -24,7 +22,7 @@ Rails.application.routes.draw do
       get '/specializations', to: 'specializations#index'
   
       # Doctor Routes 
-  
+
       get '/doctors', to: 'doctors#index' do
       get :photo, on::member
       end 
@@ -42,8 +40,7 @@ Rails.application.routes.draw do
       post '/reserve-form', to: 'reservations#create'
       patch '/reservation/:id', to: 'reservations#update'
       delete  '/reservation/:id', to: 'reservations#destroy'
+  
     end
   end
 end
-
-

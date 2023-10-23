@@ -42,6 +42,13 @@ export const createDoctors = createAsyncThunk('doctors/createDoctors', async (ne
   }
 });
 
+export const deleteDoctorAction = createAsyncThunk(
+  'doctors/deleteDoctor',
+  async (id) => {
+    const response = axios.delete(`http://localhost:5000/api/v1/doctors/${id}`);
+    return id;
+  }
+);
 
 
 const doctorsSlice = createSlice({
@@ -60,6 +67,7 @@ const doctorsSlice = createSlice({
           state.doctors.push({
             id: doctorId,
             name: doctorData.name,
+            photo:doctorData.photo,
             bio: doctorData.bio,
             specialization: doctorData.specialization_name,
             // Add other properties you want to include
@@ -69,9 +77,14 @@ const doctorsSlice = createSlice({
       .addCase(fetchDoctors.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(deleteDoctorAction.fulfilled, (state, action) => {
+        const doctorId = action.payload;
+        state.doctors = state.doctors.filter(doctor => doctor.id !== doctorId);
       });
   },
 })
 
-export default doctorsSlice.reducer;
 
+
+export default doctorsSlice.reducer;

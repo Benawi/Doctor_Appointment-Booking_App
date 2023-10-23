@@ -40,24 +40,6 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
-  def update
-    @reservation = Reservation.find(params[:id])
-    if @reservation.update(reservation_params)
-      render json: 'reservation updated successfully'
-    else
-      render json: @reservation.errors.full_messages, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @reservation = Reservation.find(params[:id])
-    if @reservation.destroy
-      render json: 'appontment deleted succesfully'
-    else
-      render json: @reservation.errors.full_messages, status: :unprocessable_entity
-    end
-  end
-
   private
 
   def reservation_params

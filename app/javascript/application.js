@@ -5,8 +5,6 @@ import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import App from './components/App.js';
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -16,4 +14,3 @@ ReactDOM.render(
 
   document.getElementById('root'),
 );
-

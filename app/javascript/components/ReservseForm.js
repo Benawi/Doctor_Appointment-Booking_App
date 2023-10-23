@@ -4,20 +4,21 @@ import { createReservations } from "../redux/reservations/reservationsSlice";
 import { fetchDoctors } from "../redux/doctors/doctorsSlice";
 
 const ReserveForm = () => {
-  const dispatch = useDispatch();
-  const doctors = useSelector( (state) => state.doctors.doctors)
-
   const [reservationData, setreservationData] = useState({
     doctor_id: "",
     reservation_time: "",
   });
 
+  const dispatch = useDispatch();
+  const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
   useEffect(() => {
+    if (!fetched) {
+      dispatch(fetchDoctors());
+    }
+  }, [dispatch, fetched ]);
+  const doctors = useSelector((state) => state.doctors.doctors);
 
-    dispatch(fetchDoctors());
-  }, [dispatch]);
 
-  
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReservations(reservationData));
@@ -54,5 +55,4 @@ const ReserveForm = () => {
     </div>
   );
 }
-
 export default ReserveForm;

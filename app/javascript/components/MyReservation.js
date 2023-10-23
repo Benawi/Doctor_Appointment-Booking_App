@@ -4,11 +4,14 @@ import { fetchReservations } from "../redux/reservations/reservationsSlice";
 
 const MyReservation = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector(state => state.reservations.reservations);
-
+  const fetched  = useSelector((state) => state.reservations.reservations.length > 0);
   useEffect(() => {
-    dispatch(fetchReservations())
-  }, [dispatch])
+    if (!fetched) {
+      dispatch(fetchReservations());
+    }
+  }, [dispatch, fetched ]);
+  const reservations = useSelector((state) => state.reservations.reservations);
+
   return (
     <div className="Main-Section">
 
