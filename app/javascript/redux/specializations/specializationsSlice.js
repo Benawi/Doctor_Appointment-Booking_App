@@ -1,7 +1,7 @@
 // specializationsSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+   
 const GET_SPECIALIZATION_URL = 'http://127.0.0.1:5000/api/v1/specializations';
 
 // Define an initial state for specializations

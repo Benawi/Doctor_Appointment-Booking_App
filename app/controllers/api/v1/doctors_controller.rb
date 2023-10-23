@@ -1,4 +1,5 @@
 class Api::V1::DoctorsController < ApplicationController
+  protect_from_forgery with: :null_session
   def index
     @doctors = Doctor.includes(:reservations, :specialization).order('created_at desc')
     if @doctors
@@ -9,7 +10,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def show
-    @doctor = Doctor.where(id: params[:id])
+    @doctor = Doctor.where(uuid: params[:uuid])
     if @doctor
       render json: @doctor, status: :ok
     else
@@ -28,7 +29,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    @doctor = Doctor.find(params[:id])
+    @doctor = Doctor.find_by(uuid: params[:uuid])
     if @doctor.destroy
       render json: { status: 'DELETED', message: 'Doctor deleted1 successfully', data: @doctor }, status: :ok
     else
@@ -46,6 +47,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:id, :name, :bio, :photo, :specialization_id)
+    params.require(:doctor).permit(:id, :uuid, :name, :bio, :photo, :specialization_id)
   end
 end

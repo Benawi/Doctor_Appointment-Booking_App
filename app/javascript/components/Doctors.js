@@ -54,7 +54,7 @@ const Doctors = () => {
           : (
             <>
               <div className="header">
-                <h1 className="header-2">AVAILABLE DOCTORS</h1>
+                <h1 className="header-1">AVAILABLE DOCTORS</h1>
                 <p className="header-2"> Please select a doctor</p>
               </div>
               <div className="doctors-li">

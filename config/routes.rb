@@ -24,13 +24,16 @@ Rails.application.routes.draw do
       # Doctor Routes 
 
       get '/doctors', to: 'doctors#index' do
+      resources :doctors, only: [:index, :show, :destroy]
       get :photo, on::member
       end 
-      get '/doctors/:id', to: 'doctors#show' do
+      get '/doctors/:uuid', to: 'doctors#show' do
+      resources :doctors, only: [:index, :show, :destroy]
         get :photo, on::member
       end
       post '/create-doctors', to: 'doctors#create'
-      delete '/doctors/:id', to: 'doctors#destroy'
+      delete '/doctors/:uuid', to: 'doctors#destroy'
+      resources :doctors, only: [:index, :show, :destroy]
       patch '/doctors/update/:id', to: 'doctors#update'
   
     # Reservation routes

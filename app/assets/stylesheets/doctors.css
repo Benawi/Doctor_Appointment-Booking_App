@@ -75,6 +75,12 @@
   width: 22rem;
 }
 
+.header {
+  position: relative;
+  text-align: center;
+  margin-top: -20px;
+}
+
 .header-2 {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
@@ -89,7 +95,7 @@
   width: 10rem;
   height: 10rem;
   padding: 3rem;
-  margin-top: 7vh;
+  margin-top: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,8 +118,7 @@
   font-size: 0.5rem;
   height: 3rem;
   justify-content: flex-end;
-  margin-left: -3.5rem;
-  margin-right: -4rem;
+  margin-right: -2rem;
   width: 5rem;
   background-color: #0eadbf !important;
 }
@@ -134,34 +139,23 @@
   display: block;
 }
 
-@media only screen and (max-width: 820px) {
-  .header {
-    position: relative;
-    width: 10px;
-    margin-top: 30px;
-  }
-
-  .doctors-li {
-    position: relative;
-    left: -100px;
-  }
-
-  .react-multiple-carousel__arrow--left {
-    position: relative;
-    margin: 50%;
-    left: -10px;
-  }
-}
-
-@media only screen and (max-width: 540px) {
-  .header {
-    margin: 80px 80px 0 70px;
-    color: black;
-  }
-
+@media (max-width: 768px) {
   .header-1 {
     white-space: nowrap;
     font-size: 18px;
     display: inline-block;
+  }
+
+  .carousel-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-doctor-container {
+    position: relative;
+    left: 0;
+    max-width: 100%;
+    margin-top: 80px;
+    align-content: center;
   }
 }
