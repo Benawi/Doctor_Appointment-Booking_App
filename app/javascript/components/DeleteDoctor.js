@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchDoctors,
-  deleteDoctorAction,
-} from "../redux/doctors/doctorsSlice";
-
+import { fetchDoctors, deleteDoctorAction,} from "../redux/doctors/doctorsSlice";
 import "../../assets/stylesheets/delete_doctor.css";
 import "../../assets/stylesheets/add_doctor.css";
 import "../../assets/stylesheets/table.css";

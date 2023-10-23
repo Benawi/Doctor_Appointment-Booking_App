@@ -1,30 +1,51 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { fetchReservations } from "../redux/reservations/reservationsSlice";
-
+import "../../assets/stylesheets/delete_doctor.css";
+import "../../assets/stylesheets/add_doctor.css";
+import "../../assets/stylesheets/table.css";
 const MyReservation = () => {
   const dispatch = useDispatch();
-  const fetched  = useSelector((state) => state.reservations.reservations.length > 0);
+  const fetched = useSelector(
+    (state) => state.reservations.reservations.length > 0
+  );
   useEffect(() => {
     if (!fetched) {
       dispatch(fetchReservations());
     }
-  }, [dispatch, fetched ]);
+  }, [dispatch, fetched]);
   const reservations = useSelector((state) => state.reservations.reservations);
 
   return (
-    <div className="Main-Section">
-
-      <h2>My reservation</h2>
-      {reservations.map((reservation) => (
-        <div key={reservation.id}>
-          <h3>{reservation.user}</h3>
-          <p>Doctor: {reservation.doctor}</p>
-          <p>Reservation Time: {reservation.reservation_time}</p>
+    <section className="doctor-section">
+      <div>
+        <h3 className="doctor-title">MY RESERVATIONS</h3>
+        
+        <div className="delete-container">
+          <div>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Doctor</th>
+                  <th>Reservation Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reservations.map((reservation) => (
+                  <tr key={reservation.id} className="delete-details">
+                    <td className="tdname">{reservation.user}</td>
+                    <td className="tdname"> {reservation.doctor}</td>
+                    <td className="tdname"> {reservation.reservation_time}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      ))}
-    </div>
+      </div>
+    </section>
   );
-}
+};
 
 export default MyReservation;
