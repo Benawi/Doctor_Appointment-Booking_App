@@ -29,7 +29,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def destroy
-    @doctor = Doctor.find_by(uuid: params[:uuid]) 
+    @doctor = Doctor.find_by(uuid: params[:uuid])
     if @doctor.destroy
       render json: { status: 'DELETED', message: 'Doctor deleted1 successfully', data: @doctor }, status: :ok
     else
@@ -47,6 +47,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:id,:uuid, :name, :bio, :photo, :specialization_id)
+    params.require(:doctor).permit(:id, :uuid, :name, :bio, :photo, :specialization_id)
   end
 end
