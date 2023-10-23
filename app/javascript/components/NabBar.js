@@ -96,11 +96,63 @@ const NavBar = () => {
         {showMobileMenu && (
           <div className="mobile-menu">
             {/* Mobile nav links */}
-
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <div className="links-container">
+              <ul>
+                <li>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "active link" : "link"
+                    }
+                    to="/doctors"
+                  >
+                    Doctors
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "active link" : "link"
+                    }
+                    to="/reserve-form"
+                  >
+                    reserve form
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "active link" : "link"
+                    }
+                    to="/my-reservation"
+                  >
+                    My Reservations
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "active link" : "link"
+                    }
+                    to="/add-doctor"
+                  >
+                    add doctor
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={(navData) =>
+                      navData.isActive ? "active link" : "link"
+                    }
+                    to="/delete-doctor"
+                  >
+                    Delete a Doctor
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/users/sign_out">Sign Out</NavLink>
+                </li>
+              </ul>
+            </div>
           </div>
         )}
       </div>
