@@ -23,6 +23,9 @@ const NavBar = () => {
         <li>
           <NavLink to='/delete-doctor'>DELETE DOCTOR</NavLink>
         </li>
+        <li>
+          <a href="/logout" >Sign Out</a>
+        </li>
       </ul>
       <div>
         <ul className="Footer-contents">

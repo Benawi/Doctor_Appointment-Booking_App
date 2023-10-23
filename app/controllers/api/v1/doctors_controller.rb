@@ -1,8 +1,8 @@
 class Api::V1::DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.includes(:reservations).order('created_at desc')
+    @doctors = Doctor.includes(:reservations, :specialization).order('created_at desc')
     if @doctors
-      render json: @doctors, status: :ok
+      render json: @doctors, methods: [:specialization_name], status: :ok
     else
       render json: @doctors.errors.full_messages, status: :bad_request
     end
@@ -18,11 +18,12 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(doctor_params.merge(user_id: params[:user_id]))
+    @doctor = Doctor.new(doctor_params)
+
     if @doctor.save
       render json: { status: 'SUCCESS', data: @doctor, message: 'Doctor successfully created' }, status: :created
     else
-      render json: @doctor.errors.full_messages, status: :unprocessable_entity
+      render json: { status: 'ERROR', errors: @doctor.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -45,6 +46,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:id, :user_id, :name, :bio, :photo, :specialization)
+    params.require(:doctor).permit(:name, :bio, :photo, :specialization_id)
   end
 end
