@@ -24,14 +24,12 @@ const ReserveForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReservations(reservationData));
-
     navigate('/my-reservation')
-    
   };
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log("Value:", value);
+   
     setreservationData({ ...reservationData, [name]: value });
   };
 
