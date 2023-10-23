@@ -7,7 +7,7 @@ const SignOut = () => {
   const handleSignOut = async () => {
     // Send a request to the server to log the user out
     try {
-      await fetch('/logout', {
+      await fetch('http://127.0.0.1:5000/api/v1/users/sign_out', {
         method: 'DELETE',
         credentials: 'include', // Include cookies for session-based authentication
       });
@@ -20,8 +20,7 @@ const SignOut = () => {
   };
 
   return (
-    <div className="Main-Section">
-
+    <div className="main-doctor-container">
       <button onClick={handleSignOut}>Sign Out</button>
     </div>
   );

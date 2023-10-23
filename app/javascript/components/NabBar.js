@@ -76,7 +76,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/users/sign_out">Sign Out</NavLink>
+                <NavLink to="/logout">Sign Out</NavLink>
               </li>
             </ul>
           </div>
