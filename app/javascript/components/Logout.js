@@ -7,9 +7,13 @@ const SignOut = () => {
   const handleSignOut = async () => {
     // Send a request to the server to log the user out
     try {
-      await fetch('/logout', {
+      const csrfToken = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+      await fetch('http://127.0.0.1:5000/users/sign_out', {
         method: 'DELETE',
         credentials: 'include', // Include cookies for session-based authentication
+        headers: {
+          'X-CSRF-Token': csrfToken,
+        },
       });
 
       // Redirect to the login page using the navigate function
@@ -20,8 +24,7 @@ const SignOut = () => {
   };
 
   return (
-    <div className="Main-Section">
-
+    <div className="main-doctor-container">
       <button onClick={handleSignOut}>Sign Out</button>
     </div>
   );

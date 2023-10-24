@@ -5,17 +5,19 @@ import { fetchDoctors } from "../redux/doctors/doctorsSlice";
 import "../../assets/stylesheets/detail.css";
 
 const DoctorDetails = () => {
-  const doctors = useSelector((state) => state.doctors.doctors);
   const dispatch = useDispatch();
-
+  const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
   useEffect(() => {
-    dispatch(getDoctorsAction());
-  }, [dispatch]);
+    if (!fetched) {
+      dispatch(fetchDoctors());
+    }
+  }, [dispatch, fetched ]);
+  const doctors = useSelector((state) => state.doctors.doctors);
 
   const params = useParams();
-  const doctor = doctors.find((doctor) => doctor.id === Number(params.id));
+  const doctor = doctors.find((doctor) => doctor.id === params.id);
   console.log(doctors);
-  const { name, photo, bio } = doctor;
+  const { name, photo, bio,uuid,specialization } = doctor;
   return (
     <div id="RouterNavLink" className="details-container">
       <div className="image-container">
@@ -29,19 +31,19 @@ const DoctorDetails = () => {
         <h4 className="me-5 fs-7">{name}</h4>
         <table className="mr-5">
           <tr>
-            <th>specialization:</th>
+            <th>specialization: </th>
             <td className="py-2 me-5 fs-5">{specialization}</td>
           </tr>
           <tr>
             <th>bio:</th>
-            <td>{bio}</td>
+            <td className="py-2 me-5 fs-5">{bio}</td>
           </tr>
         </table>
         <Link
-          to="/new_appointment"
+          to="/reserve-form"
           className="btn btn-secondary mt-4 text-center"
         >
-          Book Appointment
+          Reserve Appointment
         </Link>
       </div>
     </div>

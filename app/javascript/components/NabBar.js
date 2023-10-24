@@ -8,6 +8,7 @@ import twitter from "../../assets/images/twitter-icon-home.png";
 import insta from "../../assets/images/insta-icon-home.png";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
+import SignOut from "./Logout";
 const social = [{ icon: twitter }, { icon: fb }, { icon: insta }];
 
 const NavBar = () => {
@@ -76,7 +77,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/users/sign_out">Sign Out</NavLink>
+                <SignOut />
               </li>
             </ul>
           </div>
@@ -149,7 +150,7 @@ const NavBar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/users/sign_out">Sign Out</NavLink>
+                  <SignOut />
                 </li>
               </ul>
             </div>

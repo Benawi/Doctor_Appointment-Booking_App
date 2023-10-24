@@ -30,7 +30,6 @@ class Api::V1::ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params.merge(doctor_id: params[:doctor_id]))
 
-    # Assuming you have an authentication system, set the user_id to the current user's ID
     @reservation.user_id = current_user.id
 
     if @reservation.save

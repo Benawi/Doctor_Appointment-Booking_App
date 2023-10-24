@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { createDoctors } from "../redux/doctors/doctorsSlice";
 import { fetchSpecializations } from "../redux/specializations/specializationsSlice";
 import "../../assets/stylesheets/add_doctor.css";
 const AddDoctor = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const fetched = useSelector((state) => state.specializations.specializations.length > 0);
   useEffect(() => {
@@ -29,6 +31,7 @@ const AddDoctor = () => {
     setTimeout(() => {
       setSuccessNotice(false);
     }, 2000);
+    navigate('/')
   };
 
   const handleInputChange = (event) => {
@@ -51,21 +54,21 @@ const AddDoctor = () => {
               name="name"
               placeholder="Name"
               onChange={handleInputChange}
-              required // Mark the input as required
+              required
             />
             <input
               className="form-control"
               name="bio"
               placeholder="Bio"
               onChange={handleInputChange}
-              required // Mark the input as required
+              required
             />
             <input
               className="form-control"
               name="photo"
               placeholder="Photo URL"
               onChange={handleInputChange}
-              required // Mark the input as required
+              required
             />
             <select
               className="form-control"
