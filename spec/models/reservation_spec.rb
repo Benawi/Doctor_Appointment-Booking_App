@@ -17,5 +17,12 @@ RSpec.describe Doctor, type: :model do
     expect(reservation.valid?).to eq false
   end
 
+  it 'should save a reservation with valid attributes' do
+    user = User.first
+    doctor = Doctor.first
+    reservation = Reservation.new(user: user, doctor: doctor, reservation_time: Time.now, comments: 'Valid reservation')
+    expect(reservation.valid?).to eq true
+  end
+
  
 end
