@@ -1,4 +1,3 @@
-
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./NabBar";
@@ -8,7 +7,6 @@ import DeleteDoctor from "./DeleteDoctor";
 import ReserveForm from "./ReservseForm";
 import MyReservation from "./MyReservation";
 import DoctorDetails from "./DoctorDetails";
-import SignOut  from "./Logout";
 import Header from "./Header";
 
 const App = () => {
@@ -25,7 +23,6 @@ const App = () => {
           <Route exact path="/delete-doctor" element={<DeleteDoctor />} />
           <Route exact path="/reserve-form" element={<ReserveForm />} />
           <Route exact path="/my-reservation" element={<MyReservation />} />
-          <Route exact path="/logout" element={<SignOut />} />
         </Routes>
       </HashRouter>
     </div>

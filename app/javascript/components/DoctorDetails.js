@@ -6,18 +6,18 @@ import "../../assets/stylesheets/detail.css";
 
 const DoctorDetails = () => {
   const dispatch = useDispatch();
-  const fetched  = useSelector((state) => state.doctors.doctors.length > 0);
+  const fetched = useSelector((state) => state.doctors.doctors.length > 0);
   useEffect(() => {
     if (!fetched) {
       dispatch(fetchDoctors());
     }
-  }, [dispatch, fetched ]);
+  }, [dispatch, fetched]);
   const doctors = useSelector((state) => state.doctors.doctors);
 
   const params = useParams();
   const doctor = doctors.find((doctor) => doctor.id === params.id);
   console.log(doctors);
-  const { name, photo, bio,uuid,specialization } = doctor;
+  const { name, photo, bio, uuid, specialization } = doctor;
   return (
     <div id="RouterNavLink" className="details-container">
       <div className="image-container">
@@ -39,10 +39,7 @@ const DoctorDetails = () => {
             <td className="py-2 me-5 fs-5">{bio}</td>
           </tr>
         </table>
-        <Link
-          to="/reserve-form"
-          className="btn btn-secondary mt-4 text-center"
-        >
+        <Link to="/reserve-form" className="btn btn-secondary mt-4 text-center">
           Reserve Appointment
         </Link>
       </div>

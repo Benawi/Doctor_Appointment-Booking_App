@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchDoctors, deleteDoctorAction,} from "../redux/doctors/doctorsSlice";
+import {
+  fetchDoctors,
+  deleteDoctorAction,
+} from "../redux/doctors/doctorsSlice";
 import "../../assets/stylesheets/delete_doctor.css";
 import "../../assets/stylesheets/add_doctor.css";
 import "../../assets/stylesheets/table.css";
@@ -25,13 +28,13 @@ const DeleteDoctor = () => {
 
   return (
     <section className="doctor-section">
-      <div >
+      <div>
         <h3 className="doctor-title">LIST OF DOCTORS</h3>
         {successNotice && (
-              <p className="doctor-title text-center text-sky-500 text-lg mt-4">
-                Doctor deleted succesfully!
-              </p>
-            )}
+          <p className="doctor-title text-center text-sky-500 text-lg mt-4">
+            Doctor deleted succesfully!
+          </p>
+        )}
         <div className="delete-container">
           <div>
             <table className="table">

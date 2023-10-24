@@ -20,7 +20,7 @@ const MyReservation = () => {
     <section className="doctor-section">
       <div>
         <h3 className="doctor-title">MY RESERVATIONS</h3>
-        
+
         <div className="delete-container">
           <div>
             <table className="table">

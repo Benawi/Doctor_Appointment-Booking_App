@@ -21,7 +21,6 @@ const ReserveForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(createReservations(reservationData));
-
     setSuccessNotice(true);
     setTimeout(() => {
       setSuccessNotice(false);
@@ -42,7 +41,7 @@ const ReserveForm = () => {
         <h3 className="doctor-title">Reserve Appointement</h3>
         {successNotice && (
           <p className="doctor-title text-center text-sky-500 text-lg mt-4">
-           Appointement reserved succesfully!
+            Appointement reserved succesfully!
           </p>
         )}
         <form className="doctor-form" onSubmit={handleSubmit}>
