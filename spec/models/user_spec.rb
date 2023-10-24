@@ -11,5 +11,9 @@ RSpec.describe User, type: :model do
     expect(user.valid?).to eq true
   end
 
+  it 'should not save if user passwords do not match' do
+    user = User.new(username: 'jane007', email: 'jane@mail.com', password: 'toyman12', password_confirmation: 'toyman123')
+    expect(user.valid?).to eq false
+  end
 
 end
