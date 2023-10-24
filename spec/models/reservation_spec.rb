@@ -29,5 +29,12 @@ RSpec.describe Doctor, type: :model do
     reservation = Reservation.new(doctor: doctor, reservation_time: Time.now, comments: 'Missing user')
     expect(reservation.valid?).to eq false
   end
+
+  it 'should not save a reservation if doctor is missing' do
+    user = User.first
+    reservation = Reservation.new(user: user, reservation_time: Time.now, comments: 'Missing doctor')
+    expect(reservation.valid?).to eq false
+  end
+
  
 end
