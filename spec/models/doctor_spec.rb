@@ -16,8 +16,13 @@ RSpec.describe Doctor, type: :model do
     expect(doctor.valid?).to eq true
   end
 
-  it 'should not save doctor if specialization is missing' do
+  it 'should not save doctor if specialization_id is missing' do
     doctor = Doctor.new(name: 'Ben Cruise', bio: 'A top notch doctor', photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg')
     expect(doctor.valid?).to eq false
+  end
+
+  it 'should not save doctor if specialization is nill' do
+    doctor = Doctor.new(name: 'Ben Cruise', bio: 'A top notch doctor', photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg', specialization_id: @specialization2.id)
+    expect(doctor.specialization_id).not_to be_nil
   end
 end
