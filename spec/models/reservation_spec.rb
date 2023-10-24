@@ -36,5 +36,11 @@ RSpec.describe Doctor, type: :model do
     expect(reservation.valid?).to eq false
   end
 
+  it 'should return the user associated with the reservation' do
+    user = User.first
+    doctor = Doctor.first
+    reservation = Reservation.create(user: user, doctor: doctor, reservation_time: Time.now, comments: 'User association')
+    expect(reservation.user).to eq user
+  end
  
 end
