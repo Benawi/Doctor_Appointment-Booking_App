@@ -11,4 +11,9 @@ RSpec.describe Doctor, type: :model do
     expect(doctor.valid?).to eq false
   end
 
+  it 'should save doctor with valid attributes' do
+    doctor = Doctor.new(name: 'Ben Cruise', bio: 'A top notch doctor', photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg', specialization_id: @specialization1.id)
+    expect(doctor.valid?).to eq true
+  end
+
 end
