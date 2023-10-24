@@ -7,4 +7,8 @@ RSpec.describe Specialization, type: :model do
     expect(specialization.valid?).to eq true
   end
 
+  it 'should save user with valid attributes' do
+    specialization = Specialization.new(name: 'Gynecologist', )
+    expect(specialization.name).to eq 'Gynecologist'
+  end
 end
