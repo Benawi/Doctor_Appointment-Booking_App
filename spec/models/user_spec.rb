@@ -16,4 +16,9 @@ RSpec.describe User, type: :model do
     expect(user.valid?).to eq false
   end
 
+  it 'should not save a user if email if missing' do
+    user = User.new(username: 'jane007', password: 'toyman12', password_confirmation: 'toyman123')
+    expect(user.valid?).to eq false
+  end
+
 end
