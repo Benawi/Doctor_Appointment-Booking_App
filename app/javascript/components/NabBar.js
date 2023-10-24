@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../assets/stylesheets/main.css";
 import "../../assets/stylesheets/responsive.css";
 import logo from "../../assets/images/doctor-logo.png";
@@ -8,11 +8,33 @@ import twitter from "../../assets/images/twitter-icon-home.png";
 import insta from "../../assets/images/insta-icon-home.png";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-import SignOut from "./Logout";
 const social = [{ icon: twitter }, { icon: fb }, { icon: insta }];
 
 const NavBar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    // Send a request to the server to log the user out
+    try {
+      const csrfToken = document
+        .querySelector("meta[name=csrf-token]")
+        .getAttribute("content");
+      await fetch("http://127.0.0.1:5000/users/sign_out", {
+        method: "DELETE",
+        credentials: "include", // Include cookies for session-based authentication
+        headers: {
+          "X-CSRF-Token": csrfToken,
+        },
+      });
+
+      // Redirect to the login page using the navigate function
+      navigate("/login"); // Adjust the path to match your login route
+      location.reload(true);
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
   return (
     <nav>
       <div className="desktop-nav">
@@ -77,7 +99,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li>
-                <SignOut />
+                  <button onClick={handleSignOut}>Sign Out</button>
               </li>
             </ul>
           </div>
@@ -150,8 +172,8 @@ const NavBar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <SignOut />
-                </li>
+                  <button onClick={handleSignOut}>Sign Out</button>
+              </li>
               </ul>
             </div>
           </div>

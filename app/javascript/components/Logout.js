@@ -19,15 +19,11 @@ const SignOut = () => {
       // Redirect to the login page using the navigate function
       navigate('/login'); // Adjust the path to match your login route
     } catch (error) {
+
       console.error('Logout failed:', error);
+      
     }
   };
-
-  return (
-    <div className="main-doctor-container">
-      <button onClick={handleSignOut}>Sign Out</button>
-    </div>
-  );
 };
 
 export default SignOut;

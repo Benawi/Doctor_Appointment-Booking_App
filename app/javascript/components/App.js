@@ -1,4 +1,3 @@
-
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./NabBar";
@@ -8,7 +7,7 @@ import DeleteDoctor from "./DeleteDoctor";
 import ReserveForm from "./ReservseForm";
 import MyReservation from "./MyReservation";
 import DoctorDetails from "./DoctorDetails";
-import SignOut  from "./Logout";
+import SignOut from "./Logout";
 import Header from "./Header";
 
 const App = () => {
