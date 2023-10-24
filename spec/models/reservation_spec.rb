@@ -10,9 +10,11 @@ RSpec.describe Doctor, type: :model do
     @specialization1 = Specialization.create(name: 'Dermatologist')
     @specialization2 = Specialization.create(name: 'Pediatrician')
     @doctor1 = Doctor.create(name: 'Ben Cruise', bio: 'A top notch doctor',
-                             photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg', specialization_id: @specialization1.id)
+                             photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg',
+                             specialization_id: @specialization1.id)
     @doctor2 = Doctor.create(name: 'Jene Cartwright', bio: 'A top notch doctor',
-                             photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg', specialization_id: @specialization2.id)
+                             photo: 'https://unsplash.com/photos/man-in-white-suit-jacket-7bMdiIqz_J4.jpg',
+                             specialization_id: @specialization2.id)
   end
 
   it 'should not save a reservation without parameters' do
