@@ -139,6 +139,12 @@ rails s
 
 ## 👥 Authors <a name="authors"></a>
 
+
+### 👤 **Habtamu Alemayehu**
+
+- GitHub: [Benawi](https://github.com/Benawi)
+- Linkdin: [Habtamu](https://www.linkedin.com/in/habtamualemayehu/)
+
 👤 **Falako Omotoyosi**
 
 - GitHub: [@toyman640](https://github.com/toyman640)
