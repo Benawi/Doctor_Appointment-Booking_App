@@ -15,21 +15,19 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const handleSignOut = async () => {
-    // Send a request to the server to log the user out
     try {
       const csrfToken = document
         .querySelector("meta[name=csrf-token]")
         .getAttribute("content");
       await fetch("http://127.0.0.1:5000/users/sign_out", {
         method: "DELETE",
-        credentials: "include", // Include cookies for session-based authentication
+        credentials: "include",
         headers: {
           "X-CSRF-Token": csrfToken,
         },
       });
 
-      // Redirect to the login page using the navigate function
-      navigate("/login"); // Adjust the path to match your login route
+      navigate("/login");
       location.reload(true);
     } catch (error) {
       console.error("Logout failed:", error);

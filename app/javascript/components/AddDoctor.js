@@ -19,7 +19,6 @@ const AddDoctor = () => {
     (state) => state.specializations.specializations
   );
 
-  // Define doctorData state using useState
   const [doctorData, setDoctorData] = useState({
     name: "",
     bio: "",
