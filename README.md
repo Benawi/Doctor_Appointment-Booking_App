@@ -1,17 +1,15 @@
-# Final group capstone - Doctor Appointment Booking  App 
+# Doctor Appointment Booking  App 
 
 <a name="readme-top"></a>
 
-# 📗 Table of Contents 
+# 📗  [ Table of Contents](#-table-of-contents)
 
-- [Final group capstone - Book an Appointment](#final-group-capstone---doctor-appointment-booking-app)
-- [📗 Table of Contents](#-table-of-contents)
-- [📖 Doctor Appointment Booking  App  - Doctor Appointment Booking  App ](#-final-group-capstone---doctor-appointment-booking-app-)
+- [Book an Appointment](#---doctor-appointment-booking-app)
+- [📖 Doctor Appointment Booking  App](#-final-group-capstone---doctor-appointment-booking-app-)
   - [🚀Doctor Appointment Booking  App  ](#-doctor-appointment-booking-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Install](#install)
@@ -91,6 +89,7 @@ In the project directory, run:
 
   ```
   rspec .
+  ```
 
 ### Run rails
 
