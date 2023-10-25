@@ -15,6 +15,19 @@ const MyReservation = () => {
     }
   }, [dispatch, fetched]);
   const reservations = useSelector((state) => state.reservations.reservations);
+  const formatReservationTime = (timeString) => {
+    const reservationTime = new Date(timeString);
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'Africa/Lagos', 
+    };
+    return reservationTime.toLocaleTimeString('en-US', options);
+  };
 
   return (
     <section className="doctor-section">
@@ -36,7 +49,7 @@ const MyReservation = () => {
                   <tr key={reservation.id} className="delete-details">
                     <td className="tdname">{reservation.user}</td>
                     <td className="tdname"> {reservation.doctor}</td>
-                    <td className="tdname"> {reservation.reservation_time}</td>
+                    <td className="tdname">{formatReservationTime(reservation.reservation_time)}</td>
                   </tr>
                 ))}
               </tbody>

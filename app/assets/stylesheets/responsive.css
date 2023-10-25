@@ -8,6 +8,14 @@
   display: none;
 }
 
+.signout-button {
+  background: hsl(0, 100%, 50%);
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 /* Mobile menu */
 
 .mobile-menu {
@@ -24,5 +32,16 @@
 
   .mobile-nav {
     display: flex;
+    flex-direction: column;
+  }
+
+  ul.mobile-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 2px;
+  }
+
+  ul.mobile-nav li {
+    float: left;
   }
 }

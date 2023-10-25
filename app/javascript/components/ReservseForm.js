@@ -52,7 +52,7 @@ const ReserveForm = () => {
           >
             <option value="">Select Doctor</option>
             {doctors.map((doctor) => (
-              <option key={doctor.id} value={doctor.id}>
+              <option key={doctor.real_id} value={doctor.real_id}>
                 {doctor.name} ({doctor.specialization})
               </option>
             ))}

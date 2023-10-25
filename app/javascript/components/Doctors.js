@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchDoctors } from "../redux/doctors/doctorsSlice"; // Import your Redux slice/action
+import { fetchDoctors } from "../redux/doctors/doctorsSlice";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/doctors.css";
 import Carousel from "react-multi-carousel";
