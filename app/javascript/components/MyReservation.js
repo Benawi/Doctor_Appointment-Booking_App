@@ -18,10 +18,13 @@ const MyReservation = () => {
   const formatReservationTime = (timeString) => {
     const reservationTime = new Date(timeString);
     const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
       hour12: false,
-      timeZone: 'Africa/Lagos',
+      timeZone: 'Africa/Lagos', 
     };
     return reservationTime.toLocaleTimeString('en-US', options);
   };
