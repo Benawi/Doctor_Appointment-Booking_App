@@ -97,7 +97,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
               <li>
-                  <button onClick={handleSignOut}>Sign Out</button>
+                <button className="signout-button" onClick={handleSignOut}>Sign Out</button>
               </li>
             </ul>
           </div>
@@ -118,7 +118,7 @@ const NavBar = () => {
           <div className="mobile-menu">
             {/* Mobile nav links */}
             <div className="links-container">
-              <ul>
+              <ul className="mobile-nav">
                 <li>
                   <NavLink
                     className={(navData) =>
@@ -136,7 +136,7 @@ const NavBar = () => {
                     }
                     to="/reserve-form"
                   >
-                    reserve form
+                    Reserve Form
                   </NavLink>
                 </li>
                 <li>
@@ -156,7 +156,7 @@ const NavBar = () => {
                     }
                     to="/add-doctor"
                   >
-                    add doctor
+                    Add Doctor
                   </NavLink>
                 </li>
                 <li>
@@ -170,8 +170,10 @@ const NavBar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <button onClick={handleSignOut}>Sign Out</button>
-              </li>
+                  <button className="signout-button" onClick={handleSignOut}>
+                    Sign Out
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
