@@ -1,12 +1,11 @@
-# Doctor Appointment Booking  App 
-
 <a name="readme-top"></a>
 
-# 📗  [ Table of Contents](#-table-of-contents)
+# <div align="center">🛰Doctor Appointment Booking  App 🚀</div>
 
-- [Book an Appointment](#---doctor-appointment-booking-app)
-- [📖 Doctor Appointment Booking  App](#-final-group-capstone---doctor-appointment-booking-app-)
-  - [🚀Doctor Appointment Booking  App  ](#-doctor-appointment-booking-app-)
+# 📗 Table of Contents
+
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Doctor Appointment Booking  App  ](#-final-group-capstone---doctor-appointment-booking-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -29,29 +28,57 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Final group capstone - Doctor Appointment Booking  App  <a name="doctor-appointment"></a>
+# 📖 Doctor Appointment Booking  App  <a name="doctor-appointment"></a>
+This is a Doctor's Appointment application that is intended to showcase full-stack web development skills, particularly in Ruby on Rails and React. Doctor's Appointments employs an API tied to a frontend written in React, and is made using the methodology and specifications of the Capstone Project. 
+And enables the users to sign up and book appointment with docotrs. 
+The project is a repository consisting of the following files:
 
-**[Description]**
-
-This is an app where users can sign up and book appointment with docotrs. 
+- Ruby files
+- Rails files
+- JS files
+- CSS files
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
+  <ul>
+     <li>
+      <a href="https://www.ruby-lang.org/en/">
+      <img align="center" width="19" height="auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png?20101129171534" alt="ruby logo" />
+     Ruby on Rails >=7
+      </a>
+    </li>
+    <li>
+      <a href="https://rubyonrails.org/">
+      <img align="center" width="19" height="auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png" alt="React logo" />
+        React
+      </a>
+    </li><li>
+      <a href="https://rubyonrails.org/">
+      <img align="center" width="19" height="auto" src="https://cdn.freebiesupply.com/logos/large/2x/redux-logo-svg-vector.svg" alt="redux logo" />
+        Redux
+      </a>
+    </li>
+    <li>
+      <a href="https://www.postgresql.org/">
+      <img align="center" width="19" height="auto" src="https://wiki.postgresql.org/images/3/30/PostgreSQL_logo.3colors.120x120.png" alt="postgreSQL logo" />
+      PostgreSQL
+      </a>
+    </li>
+  </ul>
+  
+</ul>
 
-- Ruby on Rails >=7
-- React
-- Redux
-- Rails
-- Postgres
+
 
 ### Key Features <a name="key-features"></a>
 
 - User can sign up
--User can create doctors
+- User can create doctors
 - User can book appointment with doctors
+- User can view the details of doctors
 - User can delete doctors
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -118,9 +145,12 @@ rails db:create
 ```
 rails db:migrate
 ```
+```
+rails db:seed
+```
 
 ```
-rails s
+npm start
 ```
 
 
@@ -139,7 +169,7 @@ rails s
 👤 **Falako Omotoyosi**
 
 - GitHub: [@toyman640](https://github.com/toyman640)
-- Twitter: [@](https://twitter.com/_toyman)
+- Twitter: [@_toyman](https://twitter.com/_toyman)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/falako-omotoyosi/)
 
 
@@ -195,7 +225,7 @@ We would like to express our deepest gratitude to all the people and institution
 - **Microverse**: My sincerest thanks for creating this bootcamp. The program's structure and the quality of education provided have been crucial for my growth as a developer.
 
 #### Reference Design
-- I would also like to thank [<a href="https://www.behance.net/muratk">Murat Korkmaz</a>] for the original design on Behance that served as inspiration for this project.
+- We would also like to thank [<a href="https://www.behance.net/muratk">Murat Korkmaz</a>] for the original design on Behance that served as inspiration for this project.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
