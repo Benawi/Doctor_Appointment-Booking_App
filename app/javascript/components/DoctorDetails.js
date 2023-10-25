@@ -20,15 +20,15 @@ const DoctorDetails = () => {
   const { name, photo, bio, uuid, specialization } = doctor;
   return (
     <div id="RouterNavLink" className="details-container">
-      <div className="image-container">
+      <div className="imaged-div ">
         <img
           src={`${photo}`}
           alt="Profile of doctor"
           className="single-image"
         />
       </div>
-      <div className="details my-4">
-        <h4 className="me-5 fs-7">{name}</h4>
+      <div className="doctor-details">
+        <h1 >{name}</h1>
         <table className="mr-5">
           <tr>
             <th>specialization: </th>
@@ -39,7 +39,8 @@ const DoctorDetails = () => {
             <td className="py-2 me-5 fs-5">{bio}</td>
           </tr>
         </table>
-        <Link to="/reserve-form" className="btn btn-secondary mt-4 text-center">
+        <br></br><br></br>
+        <Link to="/reserve-form" className="angled-button">
           Reserve Appointment
         </Link>
       </div>
