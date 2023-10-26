@@ -180,7 +180,8 @@ npm start
 ## 📆 Kanban Board <a name="kanban-board"></a>
 
 - [Our kanban board](https://github.com/users/Benawi/projects/9)
-- We are a team of 2 members as stated in the authors section
+- Screenshot of the initial state of the Kanban board [screenshot1](https://user-images.githubusercontent.com/21217148/278274771-6e5d6cb9-2dbe-41c9-a944-e5eac5cf49ae.PNG) [screenshot2](https://user-images.githubusercontent.com/21217148/278274875-a2165b0b-bb55-4068-a5f8-0d4f73362181.PNG)
+- We are a team of 2 members as stated in the author's section
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
