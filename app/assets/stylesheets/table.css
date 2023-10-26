@@ -1,0 +1,59 @@
+/* Bootstrap table styling */
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+  margin-left: 40px;
+  align-self: center;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.tdbio {
+  width: 600px;
+}
+
+.tdname {
+  width: 300px;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table .table {
+  background-color: #fff;
+}
+
+/* Stripped rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Bordered table */
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+/* Hoverable rows */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075);
+}

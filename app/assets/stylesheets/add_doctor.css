@@ -1,0 +1,78 @@
+.doctor-section {
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-container {
+  background-color: rgba(85, 85, 85, 0.082);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  left: 150px;
+}
+
+.doctor-title {
+  text-align: center;
+  color: rgba(129, 124, 116, 0.993);
+  margin-bottom: 40px;
+}
+
+.doctor-form {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin-bottom: 5px;
+}
+
+.form-control,
+.select {
+  width: 200px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.button1:hover {
+  color: rgba(0, 0, 0, 0.898);
+  background-color: rgba(85, 84, 83, 0.706);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.add-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .doctor-container {
+    left: 10px;
+    margin-top: 20%;
+  }
+
+  .doctor-title {
+    position: relative;
+    left: 10px;
+    text-align: center;
+  }
+
+  .doctor-form {
+    position: relative;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .doctor-section {
+    left: 0;
+  }
+}
