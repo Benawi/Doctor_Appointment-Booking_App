@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: Doctor_Appointment_Booking_App_production1
-  username: postgres
-  password: <%= ENV["DOCTOR_APPOINTMENT_BOOKING_APP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
