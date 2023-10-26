@@ -1,0 +1,17 @@
+databases:
+  - name: doctor_appointment_booking_app_db
+    ipAllowList: []
+
+services:
+  - type: web
+    name: rails
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec npm start"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: doctor_appointment_booking_app_db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
