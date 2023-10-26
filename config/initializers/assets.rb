@@ -13,4 +13,4 @@ Rails.application.config.assets.precompile += %w( application.js application.css
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
 Rails.application.config.assets.prefix = "/assets"
 Rails.application.config.assets.css_compressor = :sass
-Rails.application.config.assets.manifest = true
+Rails.application.config.assets.manifest = Rails.root.join("public/assets/manifest.json")
