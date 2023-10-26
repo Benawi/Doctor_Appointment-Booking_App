@@ -2,10 +2,12 @@
 # exit on error
 set -o errexit
 
-# Add build commands for front end
-rm -rf public
-npm install --prefix client && npm run build --prefix client
-
 bundle install
+# clean
+rm -rf public
+# build
+npm install --prefix  && npm run build --prefix 
+# migrate
 bundle exec rake db:migrate
-bundle exec rails db:seed
+# postbuild
+cp a app/assets/builds/. public/
