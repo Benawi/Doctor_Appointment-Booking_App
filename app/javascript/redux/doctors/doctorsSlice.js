@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const GET_DOCTORS_URL = "http://127.0.0.1:5000/api/v1/doctors";
-const GET_CREATE_DOCTORS_URL = "http://127.0.0.1:5000/api/v1/create-doctors";
+const GET_DOCTORS_URL = "https://doctor-appointment-booking-app1.onrender.com/api/v1/doctors";
+const GET_CREATE_DOCTORS_URL = "https://doctor-appointment-booking-app1.onrender.com/api/v1/create-doctors";
 
 const initialState = {
   doctors: [],
@@ -50,7 +50,7 @@ export const createDoctors = createAsyncThunk(
 export const deleteDoctorAction = createAsyncThunk(
   "doctors/deleteDoctor",
   async (uuid) => {
-    const response = await fetch(`http://127.0.0.1:5000/api/v1/doctors/${uuid}`, {
+    const response = await fetch(`https://doctor-appointment-booking-app1.onrender.com/api/v1/doctors/${uuid}`, {
       method: "DELETE",
     });
     return uuid;

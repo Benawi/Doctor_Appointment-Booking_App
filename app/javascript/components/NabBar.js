@@ -19,7 +19,7 @@ const NavBar = () => {
       const csrfToken = document
         .querySelector("meta[name=csrf-token]")
         .getAttribute("content");
-      await fetch("http://127.0.0.1:5000/users/sign_out", {
+      await fetch("https://doctor-appointment-booking-app1.onrender.com/users/sign_out", {
         method: "DELETE",
         credentials: "include",
         headers: {
