@@ -51,7 +51,7 @@
 .social-net img {
   margin-right: 0.8rem;
   width: 2rem;
-  color: rgb(156, 163, 175, 0.5);
+  color: rgb(156, 163, 175);
 }
 
 .doctor-data h4 {
@@ -84,7 +84,7 @@
 .header-2 {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
-  color: rgb(156, 163, 175, 0.5) !important;
+  color: rgb(156, 163, 175) !important;
 }
 
 .details {
