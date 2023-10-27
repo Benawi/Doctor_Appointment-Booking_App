@@ -37,7 +37,7 @@
 }
 
 .close-btn-container:hover {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(0, 0, 0) !important;
 }
 
 .doctor-data {
@@ -67,7 +67,7 @@
 
   --tw-text-opacity: 1;
 
-  color: rgb(156, 163, 175, 0.5);
+  color: rgba(146, 150, 156);
   font-weight: 600;
 }
 

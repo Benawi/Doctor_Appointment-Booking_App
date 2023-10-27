@@ -8,7 +8,7 @@
 }
 
 .doctor-container {
-  background-color: rgba(85, 85, 85, 0.082);
+  background-color: rgba(85, 85, 85);
   padding: 30px;
   border-radius: 10px;
   position: relative;
@@ -17,7 +17,7 @@
 
 .doctor-title {
   text-align: center;
-  color: rgba(129, 124, 116, 0.993);
+  color: rgba(129, 124, 116);
   margin-bottom: 40px;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .button1:hover {
-  color: rgba(0, 0, 0, 0.898);
-  background-color: rgba(85, 84, 83, 0.706);
+  color: rgba(0, 0, 0);
+  background-color: rgba(85, 84, 83);
   font-family: 'Times New Roman', Times, serif;
 }
 
