@@ -76,13 +76,16 @@ The project is a repository consisting of the following files:
 ### Key Features <a name="key-features"></a>
 
 - User can sign up
-- User can create doctors
-- User can book appointment with doctors
-- User can view the details of doctors
+- Users can create doctors
+- Users can book appointments with doctors
+- Users can view the details of doctors
 - User can delete doctors
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 🌐 Live Demo <a name="#live-demo"></a>
 
+- [Live Demo](https://doctor-appointment-booking-app1.onrender.com/users/sign_in)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
