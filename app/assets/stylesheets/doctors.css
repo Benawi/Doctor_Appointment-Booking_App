@@ -51,7 +51,7 @@
 .social-net img {
   margin-right: 0.8rem;
   width: 2rem;
-  color: rgb(156 163 175/var(--tw-text-opacity));
+  color: rgb(156, 163, 175, 0.5);
 }
 
 .doctor-data h4 {
@@ -67,7 +67,7 @@
 
   --tw-text-opacity: 1;
 
-  color: rgb(156 163 175/var(--tw-text-opacity));
+  color: rgb(156, 163, 175, 0.5);;
   font-weight: 600;
 }
 
@@ -84,7 +84,7 @@
 .header-2 {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
-  color: rgb(107 114 128/var(--tw-text-opacity)) !important;
+  color: rgb(156, 163, 175, 0.5) !important;
 }
 
 .details {
