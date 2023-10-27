@@ -82,6 +82,7 @@ The project is a repository consisting of the following files:
 - User can delete doctors
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🌐 Live Demo <a name="#live-demo"></a>
 
 - [Live Demo](https://doctor-appointment-booking-app1.onrender.com/users/sign_in)
