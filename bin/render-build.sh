@@ -7,5 +7,7 @@ rm -rf public
 npm install --prefix  && npm run build --prefix 
 cp -a app/assets/builds/. public/
 bundle install
-bundle exec rake db:migrate
-bundle exec rails db:seed
+bundle exec rails assets:precompile
+bundle exec rails assets:clean
+bundle exec rails db:create
+bundle exec rails db:migrate
