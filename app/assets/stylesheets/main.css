@@ -24,7 +24,7 @@ body {
 .navbar {
   width: 18vw;
   height: 100vh;
-  border-right: 0.4px solid rgba(142, 142, 142, 0.2);
+  border-right: 0.4px solid  darkgray;
   padding: 1rem 1rem 0 1.5rem;
   position: fixed;
   top: 0;

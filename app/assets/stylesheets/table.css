@@ -40,7 +40,7 @@
 
 /* Stripped rows */
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0);
+  background-color: black;
 }
 
 /* Bordered table */
@@ -55,5 +55,5 @@
 
 /* Hoverable rows */
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0);
+  background-color: black;
 }
