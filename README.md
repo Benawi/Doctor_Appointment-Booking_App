@@ -29,8 +29,8 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 Doctor Appointment Booking  App  <a name="doctor-appointment"></a>
-This is a Doctor's Appointment application that is intended to showcase full-stack web development skills, particularly in Ruby on Rails and React. Doctor's Appointments employs an API tied to a frontend written in React, and is made using the methodology and specifications of the Capstone Project. 
-And enables the users to sign up and book appointment with docotrs. 
+This is a Doctor's Appointment application that is intended to showcase full-stack web development skills, particularly in Ruby on Rails and React. Doctor's Appointments employs an API tied to a frontend written in React and is made using the methodology and specifications of the Capstone Project. 
+And enables the users to sign up and book appointments with doctors. 
 The project is a repository consisting of the following files:
 
 - Ruby files
@@ -191,8 +191,8 @@ npm start
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add section to book appointment with docotors
-- Add proper front end user authentication
+- Add a section to book appointments with doctors
+- Add proper front-end user authentication
 - Add extra styling
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -219,11 +219,11 @@ If you found this project helpful, consider giving a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to express our deepest gratitude to all the people and institutions that have contributed to make this project possible.
+We would like to express our deepest gratitude to all the people and institutions that have contributed to making this project possible.
 
 #### Development Team
 - **Falako Omotoyosi**: Thank you for being a productive partner with impressive technical thinking and good execusion style.
-- **Habtamu Alemayehu Benawi**: I appreciate your commitment and dedication. Your zeal and you promptness to executing tasks at hand, you are a great partner.
+- **Habtamu Alemayehu Benawi**: I appreciate your commitment and dedication. Your zeal and your promptness in executing the tasks at hand, you are a great partner.
 
 
 #### Institution
