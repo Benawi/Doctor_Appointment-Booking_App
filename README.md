@@ -71,8 +71,6 @@ The project is a repository consisting of the following files:
   
 </ul>
 
-
-
 ### Key Features <a name="key-features"></a>
 
 - User can sign up
@@ -139,7 +137,7 @@ To configure the database connection in Rails, you need to update the database.y
 ```
  
 
-4. Replace your_username with your actual database username and your_password with your actual database password.
+4. Replace your username with your actual database username and your password with your actual database password.
 5. Save the changes to the database.yml file.
 6. Run
 ```
@@ -223,7 +221,7 @@ We would like to express our deepest gratitude to all the people and institution
 
 #### Development Team
 - **Falako Omotoyosi**: Thank you for being a productive partner with impressive technical thinking and good execusion style.
-- **Habtamu Alemayehu Benawi**: I appreciate your commitment and dedication. Your zeal and your promptness in executing the tasks at hand, you are a great partner.
+- **Habtamu Alemayehu Benawi**: I appreciate your commitment and dedication. With your zeal and your promptness in executing the tasks at hand, you are a great partner.
 
 
 #### Institution
