@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# <div align="center">🛰Doctor Appointment Booking  App 🚀</div>
+# <div align="center">🛰Doctor Appointment Booking App 🚀</div>
 
 # 📗 Table of Contents
 
