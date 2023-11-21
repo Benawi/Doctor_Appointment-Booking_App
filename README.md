@@ -109,8 +109,8 @@ npm install
 
 ### Usage
 
-In the project directory, run :
-npm start
+In the project directory, run the :
+npm start command
 
 
 ### Run tests
