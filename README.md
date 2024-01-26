@@ -75,7 +75,7 @@ The project is a repository consisting of the following files:
 
 - User can sign up
 - Users can create doctors
-- Users can book appointments with doctors
+- Users can book appointments with doctor
 - Users can view the details of doctors
 - User can delete doctors
 
